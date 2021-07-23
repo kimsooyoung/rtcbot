@@ -185,7 +185,8 @@ class _videoSenderTrack(VideoStreamTrack):
         if self._startTime is None:
             self._startTime = time.time()
 
-        new_frame = VideoFrame.from_ndarray(img, format="bgr24")
+        # new_frame = VideoFrame.from_ndarray(img, format="bgr24")
+        new_frame = VideoFrame.from_image(img)
         new_frame.time_base = VIDEO_TIME_BASE
 
         # https://en.wikipedia.org/wiki/Presentation_timestamp
